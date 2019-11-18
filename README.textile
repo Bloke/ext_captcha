@@ -1,0 +1,44 @@
+h1. ext_recaptcha
+
+An implementation of ReCaptcha (v3) for detecting bot/spammer interaction with your site.
+
+h2. Installation / Uninstallation
+
+"Download this plugin":# and then follow the instructions below depending on your version of Textpattern. For bug reports, please "raise an issue":#.
+
+h3. For Textpattern 4.8.x
+
+Upload the plugin's .zip file to the _Admin->Plugins_ panel, install and enable the plugin.
+
+To uninstall, delete the plugin from the _Admin->Plugins_ panel.
+
+h3. For Textpattern 4.7.x
+
+# Unpack the plugin's .zip file and upload the ReCaptcha library it contains to your textpattern/vendors directory.
+# Paste the code from the .txt file into the Textpattern _Admin->Plugins_ panel, install and enable the plugin.
+
+To uninstall:
+
+* Delete the plugin from the _Admin->Plugins_ panel.
+* Remove ReCaptcha from the textpattern/vendors directory.
+
+h2. Usage
+
+# Visit the "ReCaptcha registration site":https://g.co/recaptcha/v3.
+# Follow the instructions for obtaining site/secret keys for _ReCaptcha v3_ on your chosen domain.
+# Visit your site's _Admin->Prefs_ panel and click the ReCaptcha group from the list.
+# Copy and paste the Site and Secret keys into the relevant boxes.
+# Adjust the Score threshold if you wish. 0.5 is average. Higher values (towards 1.0) are more stringent, i.e. content with a higher score is required to pass. Lower values, towards zero, are more lenient.
+# Adjust the time that the captcha response remains valid (default is 120 seconds). If you have complex forms you may wish to raise this. Set it to zero to disable this feature.
+# Save the prefs.
+
+Then, somewhere in your Page/Form template that you wish to employ ReCaptcha, add this tag:
+
+bc. <txp:ext_recaptcha />
+
+If the plugin is used within a com_connect form, a zem_contact form, a mem_form or a Textpattern comment form and the test fails, the plugin will raise a "SPAM" evaluation result, forbidding the form submission.
+
+h2. Author / credits
+
+Written by "Stef Dawson":https://stefdawson.com/contact. Rowan Merewood for the "recaptcha v3 library":https://github.com/google/recaptcha.
+
