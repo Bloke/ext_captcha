@@ -124,10 +124,6 @@ function ext_recaptcha($atts, $thing = null)
         return;
     }
 
-    if ($nonce === true) {
-        $nonce = Txp::get('\Textpattern\Password\Random')->generate(16);
-    }
-
     $out[] = '<input type="hidden" name="recaptchaResponse" id="recaptchaResponse" />';
 
     $out[] = script_js(<<<EOJS
