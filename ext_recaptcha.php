@@ -111,6 +111,7 @@ function ext_recaptcha($atts, $thing = null)
         'break'    => '',
         'action'   => 'homepage',
         'response' => '',
+        'nonce'    => null,
     ), $atts));
 
     $out = array();
@@ -123,12 +124,21 @@ function ext_recaptcha($atts, $thing = null)
         return;
     }
 
+    if ($nonce === true) {
+        $nonce = Txp::get('\Textpattern\Password\Random')->generate(16);
+    }
+
     $out[] = '<input type="hidden" name="recaptchaResponse" id="recaptchaResponse" />';
 
     $out[] = script_js(<<<EOJS
 window.onload = function() {
     var scriptag = document.createElement('script');
     scriptag.setAttribute('src', 'https://www.google.com/recaptcha/api.js?render={$siteKey}');
+
+    if ('{$nonce}' !== '') {
+        scriptag.setAttribute('nonce', '{$nonce}');
+    }
+
     scriptag.onload = function()  {
         grecaptcha.ready(function () {
             grecaptcha.execute('{$siteKey}', { action: '{$action}' }).then(function (token) {
