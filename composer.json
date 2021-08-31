@@ -1,13 +1,13 @@
 {
-  "name": "bloke/ext_recaptcha",
-  "description": "Implementation of Google ReCaptcha spam prevention for Textpattern CMS",
-  "keywords": ["textpattern", "plugin", "recaptcha", "captcha", "spam", "bot", "robot", "prevent", "submit", "contact"],
-  "homepage": "https://github.com/bloke/ext_recaptcha",
+  "name": "bloke/ext_captcha",
+  "description": "Implementation of hCaptcha/ReCaptcha spam prevention for Textpattern CMS",
+  "keywords": ["textpattern", "plugin", "recaptcha", "hcaptcha", "captcha", "spam", "bot", "robot", "prevent", "submit", "contact"],
+  "homepage": "https://github.com/bloke/ext_captcha",
   "license": "GPL-2.0",
   "type": "textpattern-plugin",
   "support": {
-    "issues": "https://github.com/bloke/ext_recaptcha/issues",
-    "source": "https://github.com/bloke/ext_recaptcha"
+    "issues": "https://github.com/bloke/ext_captcha/issues",
+    "source": "https://github.com/bloke/ext_captcha"
   },
   "require": {
     "textpattern/lock": ">=4.7.0",

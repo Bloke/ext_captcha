@@ -1,6 +1,6 @@
 {
-  "name": "ext_recaptcha",
-  "description": "Implementation of Google ReCaptcha spam prevention for Textpattern CMS",
+  "name": "ext_captcha",
+  "description": "Implementation of hCaptcha/ReCaptcha spam prevention for Textpattern CMS",
   "version": "0.1.0",
   "type": 5,
   "author": "Stef Dawson",
